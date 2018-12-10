@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
+use Acme\Point\Domain\Exception\DomainRuleException;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpFoundation\Response as Res;
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +48,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof DomainRuleException) {
+            return response()->json(['message' => trans($exception->getMessage())], Res::HTTP_BAD_REQUEST);
+        }
+
         return parent::render($request, $exception);
     }
 }

@@ -1,6 +1,10 @@
 <?php
+/**
+ * @var \Illuminate\Routing\Router $router
+ */
 
-use Illuminate\Http\Request;
+use Acme\Point\Application\AddPoint\Actions\PutAddPointAction;
+use Acme\Point\Application\AddPointDomain\Actions\PutAddPointAction as PutAddPointActionDomain;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+$router->put('/customers/add_point', PutAddPointAction::class);
+$router->put('/customers/add_point_domain', PutAddPointActionDomain::class);

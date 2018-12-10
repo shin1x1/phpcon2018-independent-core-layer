@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Standard">
+    <file>./app/</file>
+    <file>./packages/</file>
+    <exclude-pattern>*Test\.php</exclude-pattern>
+    <rule ref="PSR2"/>
+</ruleset>

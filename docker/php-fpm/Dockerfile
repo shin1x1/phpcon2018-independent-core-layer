@@ -1,4 +1,4 @@
-FROM php:7.3.0RC6-fpm-stretch
+FROM php:7.2-fpm-stretch
 
 # Install PHP extensions
 RUN apt-get update && apt-get install -y \
