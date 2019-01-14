@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.0",
+        "php": "^7.3",
         "cakephp/chronos": "^1.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
